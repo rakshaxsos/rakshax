@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f8;
+  color: #1a1a1a;
+}
+
+/* NAVBAR */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+  background: #0b1d39;
+}
+
+.nav h2 {
+  color: white;
+  margin: 0;
+}
+
+.nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: #ffb3b3;
+}
+
+/* PAGE */
+.page {
+  padding: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* BUTTONS */
+.primary-btn {
+  padding: 12px 22px;
+  background: #c62828;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #a61f1f;
+}
+
+/* CARDS */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 15px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+/* INPUTS */
+input {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ---------- MOBILE FIRST ---------- */
+
+/* NAVBAR (Mobile) */
+.nav {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.nav div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.nav a {
+  padding: 10px 0;
+  margin: 0;
+}
+
+/* PAGE */
+.page {
+  padding: 20px;
+}
+
+/* BUTTONS */
+.primary-btn {
+  width: 100%;
+}
+
+/* ADMIN CARDS */
+.card {
+  width: 100%;
+}
+
+/* ---------- TABLET & DESKTOP ---------- */
+@media (min-width: 768px) {
+  .nav {
+    flex-direction: row;
+  }
+
+  .nav div {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .nav a {
+    margin-left: 20px;
+  }
+
+  .primary-btn {
+    width: auto;
+  }
+
+  .page {
+    padding: 40px;
+  }
+}
