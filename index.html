@@ -11,6 +11,7 @@
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="logo">RakshaX</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <nav>
       <a href="index.html">Home</a>
       <a href="#">Product</a>
@@ -104,6 +105,20 @@
   <footer class="footer">
     <p>© 2026 RakshaX. All rights reserved.</p>
   </footer>
+ <script>
+    function toggleMenu() {
+      document.querySelector('.navbar').classList.toggle('active');
+    }
 
+    document.getElementById("searchInput").addEventListener("keyup", function () {
+      let value = this.value.toLowerCase();
+      let volunteers = document.querySelectorAll(".volunteer");
+
+      volunteers.forEach(v => {
+        let location = v.getAttribute("data-location");
+        v.style.display = location.includes(value) ? "block" : "none";
+      });
+    });
+  </script>
 </body>
 </html>

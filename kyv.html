@@ -11,6 +11,7 @@
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="logo">RakshaX</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <nav>
       <a href="index.html">Home</a>
       <a href="#">Product</a>
@@ -21,98 +22,91 @@
     </nav>
   </header>
 
-  <!-- KYV HERO -->
+  <!-- HERO -->
   <section class="hero team-hero">
     <h1>Know Your Volunteers</h1>
     <p>
-      RakshaX works with verified women volunteers  
-      who are ready to help during emergencies —  
-      safely, responsibly, and with respect for privacy.
+      Verified women volunteers across different locations,  
+      visible in a privacy-protected and controlled manner.
     </p>
   </section>
 
-  <!-- WHO ARE THE VOLUNTEERS -->
+  <!-- SEARCH -->
   <section class="section light">
-    <h2>Who Are RakshaX Volunteers?</h2>
-    <p class="section-text">
-      RakshaX volunteers are verified women from nearby communities
-      who choose to assist during SOS situations.
-      They are not random users — each volunteer goes through
-      a structured verification and approval process.
-    </p>
+    <h2>Search by Location</h2>
+    <input type="text" id="searchInput" placeholder="Enter city or area (e.g. Indore)">
   </section>
 
-  <!-- VERIFICATION PROCESS -->
-  <section class="section dark">
-    <h2>Volunteer Verification Process</h2>
+  <!-- VOLUNTEERS LIST -->
+  <section class="section light">
+    <div class="team-grid" id="volunteerList">
 
-    <div class="steps">
-      <div class="step">Identity Verification</div>
-      <div class="step">Background Review</div>
-      <div class="step">Manual Approval by Admin</div>
-      <div class="step">Code of Conduct Acceptance</div>
+      <!-- Volunteer 1 -->
+      <div class="team-card volunteer" data-location="indore">
+        <h3>Anjali S.</h3>
+        <p class="role">Verified Volunteer</p>
+        <p class="age">Age Range: 25–30</p>
+        <p class="bio">Location: Indore • Helped in 14 SOS cases</p>
+      </div>
+
+      <!-- Volunteer 2 -->
+      <div class="team-card volunteer" data-location="bhopal">
+        <h3>Pooja R.</h3>
+        <p class="role">Verified Volunteer</p>
+        <p class="age">Age Range: 30–35</p>
+        <p class="bio">Location: Bhopal • Helped in 9 SOS cases</p>
+      </div>
+
+      <!-- Volunteer 3 -->
+      <div class="team-card volunteer" data-location="ujjain">
+        <h3>Kavita M.</h3>
+        <p class="role">Verified Volunteer</p>
+        <p class="age">Age Range: 22–28</p>
+        <p class="bio">Location: Ujjain • Helped in 6 SOS cases</p>
+      </div>
+
+      <!-- Volunteer 4 -->
+      <div class="team-card volunteer" data-location="indore">
+        <h3>Neha T.</h3>
+        <p class="role">Verified Volunteer</p>
+        <p class="age">Age Range: 28–33</p>
+        <p class="bio">Location: Indore • Helped in 18 SOS cases</p>
+      </div>
+
     </div>
-
-    <p class="section-text">
-      Only after completing all steps does a volunteer
-      become eligible to receive SOS alerts.
-    </p>
   </section>
 
-  <!-- WHAT USERS CAN SEE -->
-  <section class="section light">
-    <h2>What Users Can See</h2>
-    <ul class="trust-list">
-      <li>First name & last initial (e.g. Anjali S.)</li>
-      <li>Verified status badge</li>
-      <li>Age range (not exact age)</li>
-      <li>Number of successful responses</li>
-      <li>Approximate area (not live location)</li>
-    </ul>
-  </section>
-
-  <!-- WHAT IS NEVER SHARED -->
+  <!-- SAFETY NOTE -->
   <section class="section dark">
-    <h2>What Is Never Shared</h2>
-    <ul class="trust-list">
-      <li>Phone numbers or personal contact details</li>
-      <li>Exact home or work addresses</li>
-      <li>ID documents</li>
-      <li>Real-time location (unless SOS is active)</li>
-    </ul>
-  </section>
-
-  <!-- LOCATION SEARCH NOTE -->
-  <section class="section light">
-    <h2>Location-Based Visibility</h2>
+    <h2>Important Privacy Note</h2>
     <p class="section-text">
-      Users may browse volunteer availability by city or area name.
-      This view is informational only and does not allow tracking,
-      contacting, or monitoring volunteers.
+      This list is for awareness and trust-building only.  
+      Volunteers cannot be contacted, tracked, or monitored  
+      unless an SOS is actively triggered.
     </p>
-  </section>
-
-  <!-- TRANSPARENCY & SAFETY -->
-  <section class="section dark">
-    <h2>Safety & Accountability</h2>
-    <ul class="trust-list">
-      <li>All volunteer actions are logged</li>
-      <li>Misuse results in immediate removal</li>
-      <li>Emergency communication is masked</li>
-      <li>Community-first, authority-assisted model</li>
-    </ul>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta">
-    <h2>Trust is Built Through Transparency</h2>
-    <p>RakshaX is committed to safe, responsible community support.</p>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <p>© 2026 RakshaX. All rights reserved.</p>
   </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    function toggleMenu() {
+      document.querySelector('.navbar').classList.toggle('active');
+    }
+
+    document.getElementById("searchInput").addEventListener("keyup", function () {
+      let value = this.value.toLowerCase();
+      let volunteers = document.querySelectorAll(".volunteer");
+
+      volunteers.forEach(v => {
+        let location = v.getAttribute("data-location");
+        v.style.display = location.includes(value) ? "block" : "none";
+      });
+    });
+  </script>
 
 </body>
 </html>
