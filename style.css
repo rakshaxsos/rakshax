@@ -154,9 +154,64 @@ body {
   margin-bottom: 20px;
 }
 
+/* TEAM PAGE */
+
+.team-hero {
+  padding: 60px 20px;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.team-card {
+  background: #fff;
+  width: 260px;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.team-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.team-card h3 {
+  margin-bottom: 5px;
+}
+
+.team-card .role {
+  font-weight: bold;
+  color: #6b1e1e;
+}
+
+.team-card .age {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.team-card .bio {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 /* FOOTER */
 .footer {
   text-align: center;
   padding: 20px;
   font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .steps, .cards, .team-grid {
+    flex-direction: column;
+    align-items: center;
+  }
 }
